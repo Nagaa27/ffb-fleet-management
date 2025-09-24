@@ -1,3 +1,5 @@
+// src/pages/Trips.test.tsx
+
 import { render, screen, fireEvent } from '@testing-library/react';
 import Trips from './Trips';
 import { Provider } from 'react-redux';

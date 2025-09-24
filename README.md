@@ -1,46 +1,163 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## 📝 **README.md**
 
-In the project directory, you can run:
+````markdown
+# 🌴 FFB Fleet Management
 
-### `npm start`
+**FFB Fleet Management** is a web application to manage FFB (Fresh Fruit Bunch) transportation fleets and trip scheduling.  
+Built with **React + Redux Toolkit** for the frontend, **Node.js + Express** for the backend, and **SQLite** for storage.  
+Includes Docker support for easy backend deployment.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🚀 Features
 
-### `npm test`
+- **Trip Planning & Scheduling**  
+  Add new trips by selecting vehicles, drivers, and mills.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Update Trip Status**  
+  Mark trips as `completed` directly from the UI.
 
-### `npm run build`
+- **Pagination & Filters**  
+  Filter trips by status (`all`, `scheduled`, `completed`, `pending`) and navigate through pages.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Redux Toolkit State Management**  
+  All data (vehicles, drivers, mills, trips) is stored in Redux slices.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Testing**  
+  Jest + React Testing Library with performance tests for 1000+ trips.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Docker Support**  
+  Backend runs inside a Node 20-alpine container with SQLite.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🛠️ Tech Stack
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Frontend**: React, Redux Toolkit, TailwindCSS  
+- **Backend**: Node.js (Express), SQLite (better-sqlite3)  
+- **Testing**: Jest, React Testing Library  
+- **Container**: Docker (Node 20-alpine)  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 📦 Installation & Running Locally
 
-## Learn More
+### 1. Clone the Repository
+```bash
+git clone https://github.com/username/ffb-fleet-management.git
+cd ffb-fleet-management
+````
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Run the Frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+cd src
+npm install
+npm start
+```
+
+Frontend runs on: `http://localhost:3000`
+
+### 3. Run the Backend
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+Backend runs on: `http://localhost:4000`
+
+---
+
+## 🐳 Running the Backend with Docker
+
+### Build the Image
+
+```bash
+cd backend
+docker build -t ffb-backend .
+```
+
+### Run the Container
+
+If port 4000 is free:
+
+```bash
+docker run -p 4000:4000 ffb-backend
+```
+
+If port 4000 is already taken:
+
+```bash
+docker run -p 4001:4000 ffb-backend
+```
+
+Then update your frontend `.env` variable `REACT_APP_API_URL=http://localhost:4001`.
+
+---
+
+## 🧪 Testing
+
+Run all frontend tests with coverage:
+
+```bash
+npm test -- --coverage
+```
+
+Coverage results will appear in the terminal.
+
+---
+
+## 📂 Project Structure
+
+```
+ffb-fleet-management/
+├── backend/           # Node.js + Express + SQLite backend
+│   ├── Dockerfile
+│   ├── server.js
+│   └── ...
+├── src/               # React + Redux Toolkit frontend
+│   ├── features/      # Redux slices
+│   ├── pages/         # React pages
+│   ├── types/         # TypeScript types
+│   └── ...
+└── README.md
+```
+
+---
+
+## 📝 Notes
+
+* Use **Node 20+** for compatibility with `better-sqlite3`.
+* Make sure the backend is running before starting the frontend for live data.
+* All tests use a mocked Axios instance to avoid real network calls.
+
+---
+
+## ✨ Future Improvements
+
+* Authentication & user roles.
+* Upload/download documents for fleet management.
+* Real-time dashboard & notifications.
+
+---
+
+Made with ❤️ by \Matius Celcius Sinaga
+
+```
+
+---
+
+### 🔹 What to do next  
+- Copy everything above to a file named `README.md` in the **root** of your project.  
+- Replace the GitHub repo URL with your actual repo URL.  
+- Replace `Matius Celcius Sinaga` with your name.  
+
+---
+
+Want me to also **add badges** (build status, coverage, Node version) at the top of the README so it looks more professional? (I can give you the code to copy-paste)
+```

@@ -1,28 +1,19 @@
-// src/features/vehicles/vehiclesSlice.ts
 import { createSlice } from '@reduxjs/toolkit';
+import { Vehicle } from '../../types';
 
-export interface Vehicle {
-  id: string;
-  plate: string;
-  capacity: number;
-}
-
-export interface VehiclesState {
-  items: Vehicle[];
-}
-
-const initialState: VehiclesState = {
-  items: Array.from({ length: 150 }, (_, i) => ({
-    id: `v${i}`,
-    plate: `B${1000 + i}XYZ`,
-    capacity: 10 + (i % 10), // ton
-  })),
-};
+const initialVehicles: Vehicle[] = Array.from({ length: 100 }, (_, i) => ({
+  id: `v${i}`,
+  plateNumber: `B${1000 + i}FFB`,
+  type: 'Truck',
+  capacity: 12,
+  driver: null,
+  status: 'active',
+}));
 
 const vehiclesSlice = createSlice({
   name: 'vehicles',
-  initialState,
-  reducers: {},
+  initialState: { items: initialVehicles },
+  reducers: {}
 });
 
 export default vehiclesSlice.reducer;

@@ -8,25 +8,61 @@ export default function Dashboard() {
 
   const { scheduled, completed, pending } = useTripStats(trips);
 
+  // 🔹 Styles
+  const container: React.CSSProperties = {
+    padding: '20px',
+    fontFamily: 'Arial, sans-serif',
+  };
+
+  const title: React.CSSProperties = {
+    fontSize: '24px',
+    fontWeight: 'bold',
+    marginBottom: '20px',
+  };
+
+  const grid: React.CSSProperties = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gap: '16px',
+  };
+
+  const card: React.CSSProperties = {
+    backgroundColor: '#fff',
+    borderRadius: '8px',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+    padding: '16px',
+  };
+
+  const cardTitle: React.CSSProperties = {
+    fontWeight: '600',
+    marginBottom: '8px',
+  };
+
+  const cardValue: React.CSSProperties = {
+    fontSize: '18px',
+    fontWeight: 'bold',
+    color: '#333',
+  };
+
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">Fleet Dashboard</h1>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="bg-white rounded-lg shadow p-4">
-          <h2 className="font-semibold mb-2">Total Vehicles</h2>
-          <p>{vehicles.length}</p>
+    <div style={container}>
+      <h1 style={title}>Fleet Dashboard</h1>
+      <div style={grid}>
+        <div style={card}>
+          <h2 style={cardTitle}>Total Vehicles</h2>
+          <p style={cardValue}>{vehicles.length}</p>
         </div>
-        <div className="bg-white rounded-lg shadow p-4">
-          <h2 className="font-semibold mb-2">Scheduled Trips</h2>
-          <p>{scheduled}</p>
+        <div style={card}>
+          <h2 style={cardTitle}>Scheduled Trips</h2>
+          <p style={cardValue}>{scheduled}</p>
         </div>
-        <div className="bg-white rounded-lg shadow p-4">
-          <h2 className="font-semibold mb-2">Completed Trips</h2>
-          <p>{completed}</p>
+        <div style={card}>
+          <h2 style={cardTitle}>Completed Trips</h2>
+          <p style={cardValue}>{completed}</p>
         </div>
-        <div className="bg-white rounded-lg shadow p-4">
-          <h2 className="font-semibold mb-2">Pending Trips</h2>
-          <p>{pending}</p>
+        <div style={card}>
+          <h2 style={cardTitle}>Pending Trips</h2>
+          <p style={cardValue}>{pending}</p>
         </div>
       </div>
     </div>

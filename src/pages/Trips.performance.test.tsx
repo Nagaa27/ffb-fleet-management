@@ -1,3 +1,5 @@
+// src/pages/Trips.performance.test.tsx
+
 import { render, screen } from '@testing-library/react';
 import Trips from './Trips';
 import { Provider } from 'react-redux';
