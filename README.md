@@ -152,12 +152,3 @@ Made with ❤️ by \Matius Celcius Sinaga
 
 ---
 
-### 🔹 What to do next  
-- Copy everything above to a file named `README.md` in the **root** of your project.  
-- Replace the GitHub repo URL with your actual repo URL.  
-- Replace `Matius Celcius Sinaga` with your name.  
-
----
-
-Want me to also **add badges** (build status, coverage, Node version) at the top of the README so it looks more professional? (I can give you the code to copy-paste)
-```
